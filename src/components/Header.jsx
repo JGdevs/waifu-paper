@@ -1,4 +1,5 @@
 import {View,StyleSheet} from 'react-native';
+import {StyledText} from './StyledText.jsx';
 import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
@@ -18,7 +19,11 @@ const Header = () => {
 
 	return (
 
-		<View style={styles.header}/>
+		<View style={styles.header}>
+			
+			<StyledText color='blue'>Header</StyledText>
+
+		</View>
 
 	)
 

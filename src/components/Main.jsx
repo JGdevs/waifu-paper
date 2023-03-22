@@ -1,6 +1,7 @@
 import {View,Text,useColorScheme,StyleSheet} from 'react-native';
 import GridImages from './GridImages.jsx';
 import Header from './Header.jsx';
+import {StyledText} from './StyledText.jsx';
 
 const styles = StyleSheet.create({
 
@@ -40,7 +41,7 @@ const Main = () => {
 			
 			<Header/>
 			<GridImages/>
-			<Text>{theme}</Text>
+			<StyledText>{theme}</StyledText>
 
 		</View>
 
