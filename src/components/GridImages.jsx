@@ -1,4 +1,5 @@
-import {View,Text} from 'react-native';
+import {View} from 'react-native';
+import {StyledText} from './StyledText.jsx';
 
 const GridImages = () => {
 
@@ -6,7 +7,7 @@ const GridImages = () => {
 
 		<View>
 			
-			<Text>The images shoulbe be here</Text>
+			<StyledText>The images shoulbe be here</StyledText>
 
 		</View>
 

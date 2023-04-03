@@ -1,6 +1,8 @@
 import {View,StyleSheet} from 'react-native';
 import {StyledText} from './StyledText.jsx';
 import Constants from 'expo-constants';
+import StyledView from './StyledView.jsx';
+import MenuIcon from './MenuIcon.jsx';
 
 const styles = StyleSheet.create({
 
@@ -8,8 +10,7 @@ const styles = StyleSheet.create({
 
 		alignItems:'center',
 		justifyContent:'space-between',
-		paddingTop:Constants.statusBarHeight + 40,
-		backgroundColor:'#f00'
+		paddingTop:Constants.statusBarHeight + 40
 
 	}
 
@@ -19,11 +20,11 @@ const Header = () => {
 
 	return (
 
-		<View style={styles.header}>
+		<StyledView style={styles.header} child>
 			
-			<StyledText color='blue'>Header</StyledText>
+			<MenuIcon/>
 
-		</View>
+		</StyledView>
 
 	)
 

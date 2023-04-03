@@ -1,4 +1,4 @@
-import {View,Text,useColorScheme,StyleSheet} from 'react-native';
+import {View,Text,useColorScheme,StyleSheet,StatusBar} from 'react-native';
 import GridImages from './GridImages.jsx';
 import Header from './Header.jsx';
 import {StyledText} from './StyledText.jsx';
@@ -39,6 +39,7 @@ const Main = () => {
 
 		<View style={mainStyles}>
 			
+			<StatusBar/>
 			<Header/>
 			<GridImages/>
 			<StyledText>{theme}</StyledText>
