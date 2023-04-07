@@ -42,7 +42,6 @@ const Main = () => {
 			<StatusBar/>
 			<Header/>
 			<GridImages/>
-			<StyledText>{theme}</StyledText>
 
 		</View>
 
