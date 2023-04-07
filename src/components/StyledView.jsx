@@ -8,7 +8,7 @@ const StyledView = ({children,style,child}) => {
 
 		container:{
 
-			backgroundColor:(child) ? (theme === 'dark') ? '#181818' : '#faf7ff' : (theme === 'dark') ? '#0b0b0b' : '#ffffff'
+			backgroundColor:(child) ? (theme === 'dark') ? '#121212' : '#faf7ff' : (theme === 'dark') ? '#000000' : '#ffffff'
 
 		} 
 

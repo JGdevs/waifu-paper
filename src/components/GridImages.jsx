@@ -7,7 +7,7 @@ const GridImages = () => {
 
 		<View>
 			
-			<StyledText>The images shoulbe be here</StyledText>
+			<StyledText></StyledText>
 
 		</View>
 
