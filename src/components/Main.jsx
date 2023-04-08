@@ -1,4 +1,5 @@
 import {View,Text,useColorScheme,StyleSheet,StatusBar} from 'react-native';
+import {NativeRouter} from 'react-router-native';
 import GridImages from './GridImages.jsx';
 import Header from './Header.jsx';
 import {StyledText} from './StyledText.jsx';
@@ -37,13 +38,17 @@ const Main = () => {
 
 	return (
 
-		<View style={mainStyles}>
-			
-			<StatusBar/>
-			<Header/>
-			<GridImages/>
+		<NativeRouter>
 
-		</View>
+			<View style={mainStyles}>
+			
+				<StatusBar/>
+				<Header/>
+				<GridImages/>
+
+			</View>
+
+		</NativeRouter>
 
 	)
 

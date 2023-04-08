@@ -4,14 +4,15 @@ import Constants from 'expo-constants';
 import StyledView from './StyledView.jsx';
 import MenuIcon from './MenuIcon.jsx';
 import SearchIcon from './SearchIcon.jsx';
-import Tabs from './Tabs.jsx';
+import NavTab from './NavTab.jsx';
 
 const styles = StyleSheet.create({
 
 	header:{
 
-		height:Constants.statusBarHeight + 20,
-		justifyContent:'center'
+		height:Constants.statusBarHeight + 40,
+		justifyContent:'center',
+		paddingTop:30
 
 	},
 
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
 	headerTitle: {
 
 		flexDirection:'row',
-		width:'35%',
+		width:'38%',
 		justifyContent:'space-around',
 
 	},
@@ -69,7 +70,7 @@ const Header = () => {
 			
 			</View>
 
-			<Tabs/>
+			<NavTab/>
 
 		</StyledView>
 
