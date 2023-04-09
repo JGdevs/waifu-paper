@@ -1,4 +1,4 @@
-export const FontSizes = {
+export const fontSizes = {
 
 	h1:32,
 	h2:24,
