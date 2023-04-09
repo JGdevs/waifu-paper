@@ -1,4 +1,5 @@
 import {useColorScheme,StyleSheet,Text} from 'react-native';
+import {fontSizes} from '../styles/fontSizes.js';
 
 const styles = StyleSheet.create({
 
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
 
 });
 
-const StyledText = ({children,color}) => {
+const StyledText = ({children,color,step,style}) => {
 
 	const theme = useColorScheme();
 
@@ -24,7 +25,10 @@ const StyledText = ({children,color}) => {
 
 		theme === 'dark' && styles.themeDarkText,
 		theme === 'light' && styles.themeLightText,
-		color && {color}
+		color && {color},
+		step && {fontSize:fontSizes[step]},
+		style
+
 	]
 
 	return (
