@@ -6,9 +6,9 @@ const instance = axios.create({
 
 });
 
-async function getRamdonImage (url) {
+async function getRamdonImages () {
 
-	const url = 'search/';
+	const url = 'search/?order_by=random&many=true';
 
 	try {
 
@@ -28,4 +28,51 @@ async function getRamdonImage (url) {
 
 }
 
-console.log(getImages());
+async function getFavoritesImages () {
+
+	const url = 'search/?order_by=favorites&many=true';
+
+	try {
+
+		const {data} = await instance.get(url);
+
+		console.log(data.images);
+
+		return data.images;
+
+	}
+
+	catch (error) {
+
+		console.log(error)
+
+	}
+
+}
+
+async function getNsfwImages () {
+
+	const url = 'search/?is_nsfw=true&many=true';
+
+	try {
+
+		const {data} = await instance.get(url);
+
+		console.log(data.images);
+
+		return data.images;
+
+	}
+
+	catch (error) {
+
+		console.log(error);
+
+	}
+
+
+} 
+
+export {getRamdonImages};
+export {getFavoritesImages};
+export {getNsfwImages};
