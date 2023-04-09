@@ -10,26 +10,31 @@ const styles = StyleSheet.create({
 
 	header:{
 
-		height:Constants.statusBarHeight + 40,
-		justifyContent:'center',
-		paddingTop:30
+		height:Constants.statusBarHeight + 40
 
 	},
 
 	headerOptions:{
 
 		height:'50%',
-		flexDirection:'row',
-		justifyContent:'space-between',
 		alignItems:'center',
+		flexDirection:'row',
+		justifyContent:'space-evenly',
 
 	},
 
-	headerTitle: {
+	containerTitle: {
 
+		width:'90%',
 		flexDirection:'row',
-		width:'38%',
-		justifyContent:'space-around',
+		alignItems:'center',
+		paddingLeft:5
+
+	},
+
+	title:{
+
+		paddingLeft:10
 
 	},
 
@@ -37,13 +42,9 @@ const styles = StyleSheet.create({
 
 		paddingRight:10
 
-	},
-
-	headerTabs:{
-
-
-
 	}
+
+
 
 });
 
@@ -54,19 +55,15 @@ const Header = () => {
 		<StyledView style={styles.header} child>
 			
 			<View style={styles.headerOptions}>
-
-				<View style={styles.headerTitle}>
 						
-					<MenuIcon/>
-					<StyledText>WaifuPaper</StyledText>
-
-				</View>
-
-				<View style={styles.headerSearch}>
+				<View style={styles.containerTitle}>
 					
-					<SearchIcon/>
+					<MenuIcon/>
+					<StyledText style={styles.title} step="h3">WaifuPaper</StyledText>
 
 				</View>
+
+				<SearchIcon/>
 			
 			</View>
 
