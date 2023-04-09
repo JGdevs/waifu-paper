@@ -38,7 +38,7 @@ const Tabs = ({to,children,style}) => {
 
 		<Link to={to} style={style}>
 
-			<StyledText>
+			<StyledText step="h4">
 			
 				{children}
 
