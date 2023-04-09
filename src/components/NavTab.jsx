@@ -13,7 +13,9 @@ const NavTab = () => {
 			flexDirection:'row',
 			justifyContent:'space-around',
 			alignItems:'center',
-			height:Constants.statusBarHeight + 20
+			height:Constants.statusBarHeight + 20,
+			borderColor:'#adb5bd',
+			borderTopWidth:1
 
 		},
 
@@ -33,7 +35,6 @@ const NavTab = () => {
 				
 				<Tabs style={styles.textTabs} to="/">Home</Tabs>
 				<Tabs style={styles.textTabs} to="/">Favorites</Tabs>
-				
 
 			</ScrollView>
 
