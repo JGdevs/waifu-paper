@@ -1,14 +1,9 @@
-import {Link,useLocation} from 'react-router-native';
 import {StyledText} from './StyledText.jsx';
-import {StyleSheet} from 'react-native';
+import {View,StyleSheet} from 'react-native';
 
 const Tabs = ({to,children,style}) => {
 
-	const {pathname} = useLocation(),
-
-	active = pathname === to,
-
-	styles = StyleSheet.create({
+	const styles = StyleSheet.create({
 
 		text:{
 
@@ -30,13 +25,12 @@ const Tabs = ({to,children,style}) => {
 	stylesActive = [
 
 		styles.text,
-		active && styles.active
 
 	];
 
 	return (
 
-		<Link to={to} style={style}>
+		<View to={to} style={style}>
 
 			<StyledText step="h4">
 			
@@ -44,7 +38,7 @@ const Tabs = ({to,children,style}) => {
 
 			</StyledText>
 
-		</Link>
+		</View>
 
 	)
 
