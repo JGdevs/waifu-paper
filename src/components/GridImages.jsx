@@ -7,8 +7,8 @@ const GridImages = () => {
 
 		<View>
 			
-			<StyledText></StyledText>
-
+			
+			
 		</View>
 
 	)
