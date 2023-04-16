@@ -1,8 +1,10 @@
 import {View,Text,useColorScheme,StyleSheet,StatusBar} from 'react-native';
-import {NativeRouter} from 'react-router-native';
 import GridImages from './GridImages.jsx';
 import Header from './Header.jsx';
 import {StyledText} from './StyledText.jsx';
+import {NavigationContainer} from '@react-navigation/native';
+import MenuPanel from './MenuPanel.jsx';
+
 
 const styles = StyleSheet.create({
 
@@ -38,17 +40,16 @@ const Main = () => {
 
 	return (
 
-		<NativeRouter>
+		<NavigationContainer>	
 
 			<View style={mainStyles}>
 			
 				<StatusBar/>
-				<Header/>
-				<GridImages/>
+				<MenuPanel/>
 
 			</View>
 
-		</NativeRouter>
+		</NavigationContainer>	
 
 	)
 
