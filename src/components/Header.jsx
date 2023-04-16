@@ -2,9 +2,10 @@ import {View,StyleSheet} from 'react-native';
 import {StyledText} from './StyledText.jsx';
 import Constants from 'expo-constants';
 import StyledView from './StyledView.jsx';
-import MenuIcon from './MenuIcon.jsx';
-import SearchIcon from './SearchIcon.jsx';
+import MenuIcon from './icons/MenuIcon.jsx';
 import NavTab from './NavTab.jsx';
+import { AntDesign } from '@expo/vector-icons';
+import {useNavigation} from '@react-navigation/native'; 
 
 const styles = StyleSheet.create({
 
@@ -44,11 +45,13 @@ const styles = StyleSheet.create({
 
 	}
 
-
-
 });
 
 const Header = () => {
+
+	const navigation = useNavigation();
+
+	const handleMenu = () => navigation.toggleDrawer();
 
 	return (
 
@@ -58,12 +61,12 @@ const Header = () => {
 						
 				<View style={styles.containerTitle}>
 					
-					<MenuIcon/>
+					<MenuIcon activeMenu={handleMenu}/>
 					<StyledText style={styles.title} step="h3">WaifuPaper</StyledText>
 
 				</View>
 
-				<SearchIcon/>
+				<AntDesign name="search1" size={24} color="white"/>
 			
 			</View>
 
