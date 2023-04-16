@@ -1,6 +1,6 @@
 import {View,useColorScheme,StyleSheet} from 'react-native';
 
-const StyledView = ({children,style,child}) => {
+const StyledView = ({children,style,child,...restOfProps}) => {
 
 	const theme = useColorScheme(),
 
@@ -23,7 +23,7 @@ const StyledView = ({children,style,child}) => {
 
 	return (
 
-		<View style={viewStyle}>
+		<View style={viewStyle} {...restOfProps}>
 			
 			{children}
 
