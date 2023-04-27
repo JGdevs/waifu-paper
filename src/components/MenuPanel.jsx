@@ -3,7 +3,6 @@ import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import drawerItems from '../data/drawerItems.js';
-import ProfileScreen from  './ProfileScreen.jsx';
 import GridImages from './GridImages.jsx';
 
 const MenuPanel = () => {
