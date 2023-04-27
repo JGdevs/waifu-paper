@@ -6,134 +6,29 @@ const instance = axios.create({
 
 });
 
-async function getRamdonImages () {
+const endpoints = {
 
-	const url = 'search/?order_by=random&many=true';
+	default:'search/?many=true&byte_size=<=1000000',
+	favorites:'search/?order_by=favorites&many=true',
+	nsfw:'search/?is_nsfw=true&many=true',
+	landscape:'/search/?orientation=LANDSCAPE&many=true',
+	gif:'/search/?gif=true&many=true',
+	gifNsfw:'/search/?gif=true&many=true&is_nsfw=true'
+
+}
+
+export async function getImages (endpoint) {
 
 	try {
 
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
+		const {data} = await instance.get(endpoints[endpoint]);
 		return data.images; 
 
 	}
 
 	catch (error) {
 
-		console.log(error);
-
-	}
-
-}
-
-async function getFavoritesImages () {
-
-	const url = 'search/?order_by=favorites&many=true';
-
-	try {
-
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
-		return data.images;
-
-	}
-
-	catch (error) {
-
-		console.log(error)
-
-	}
-
-}
-
-async function getNsfwImages () {
-
-	const url = 'search/?is_nsfw=true&many=true';
-
-	try {
-
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
-		return data.images;
-
-	}
-
-	catch (error) {
-
-		console.log(error);
-
-	}
-
-
-}
-
-async function getLandscapeImages () {
-
-	const url = '/search/?orientation=LANDSCAPE&many=true';
-
-	try {
-
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
-		return data.images;
-
-	}
-
-	catch (error) {
-
-		console.log(error);
-
-	}
-
-}
-
-async function getAnimeGif () {
-
-	const url = '/search/?gif=true&many=true';
-
-	try {
-
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
-		return data.images;
-
-	}
-
-	catch (error) {
-
-		console.log(error);
-
-	}
-
-}
-
-async function getNsfwGif () {
-
-	const url = '/search/?gif=true&many=true&is_nsfw=true';
-
-	try {
-
-		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
-		return data.images;
-
-	}
-
-	catch (error) {
-
-		console.log(error);
+		return error;
 
 	}
 
@@ -144,25 +39,14 @@ async function selfCustomSearch (url) {
 	try {
 
 		const {data} = await instance.get(url);
-
-		console.log(data.images);
-
 		return data.images;
 
 	}
 
 	catch (error) {
 
-		console.log(error);
+		return error;
 
 	}	
 
 }
-
-export {getRamdonImages};
-export {getFavoritesImages};
-export {getNsfwImages};
-export {getLandscapeImages};
-export {getNsfwImages};
-export {getAnimeGif};
-export {selfCustomSearch};
