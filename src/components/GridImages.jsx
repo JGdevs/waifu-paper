@@ -1,13 +1,15 @@
-import {useCallback} from 'react';
+import {useState,useCallback} from 'react';
 import {FlatList,StyleSheet,Image} from 'react-native';
 import {StyledText} from './StyledText.jsx';
 import StyledView from './StyledView.jsx';
-import {useQuery} from '@tanstack/react-query';
+import { useInfiniteQuery } from '@tanstack/react-query'
 import {getImages} from '../services/images.js';
 
 const GridImages = () => {
 
-	const {isLoading,isError,data:images = []} = useQuery ({
+	const [hasMore,setHasMore] = useState(true);
+
+	const {isLoading,isError,fetchNextPage,data:images = []} = useInfinityQuery ({
 
 		queryKey:['images'],
 		queryFn: async () => await getImages('default')
@@ -44,6 +46,11 @@ const GridImages = () => {
 		/>
 
 	),[]);
+
+	function onEndReached () {
+
+
+	}
 	
 	return (
 
@@ -60,6 +67,7 @@ const GridImages = () => {
 					keyExtractor={item => item.image_id}
 					removeClippedSubviews
 					initialNumToRender={6}
+					onEndReached={}
 
 				/>
 				
